@@ -1,0 +1,53 @@
+{
+    "name": "cronify",
+    "version": "0.0.1",
+    "description": "Schedule and Run Cron Jobs.",
+    "main": "build/index.js",
+    "scripts": {
+        "start": "node .",
+        "dev": "nodemon src/index.ts",
+        "clean": "rimraf build",
+        "build": "tsc",
+        "lint": "eslint src/*.ts",
+        "lint:fix": "eslint src/*.ts --fix",
+        "test": "echo \"No test to run\" && exit 0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ejekanshjain/cronify.git"
+    },
+    "author": "Ekansh Jain",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ejekanshjain/cronify/issues"
+    },
+    "homepage": "https://github.com/ejekanshjain/cronify#readme",
+    "devDependencies": {
+        "@types/async": "^3.2.4",
+        "@types/node": "^14.14.10",
+        "@types/node-cron": "^2.0.3",
+        "@typescript-eslint/eslint-plugin": "^4.8.2",
+        "@typescript-eslint/parser": "^4.8.2",
+        "eslint": "^7.14.0",
+        "eslint-config-standard": "^16.0.2",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-promise": "^4.2.1",
+        "husky": "^4.3.0",
+        "nodemon": "^2.0.6",
+        "rimraf": "^2.6.3",
+        "ts-node": "^9.0.0",
+        "typescript": "^4.1.2"
+    },
+    "dependencies": {
+        "async": "^3.2.0",
+        "dotenv": "^8.2.0",
+        "node-cron": "^2.0.3"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run lint",
+            "pre-push": "npm run test"
+        }
+    }
+}
